@@ -50,7 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div>{children}</div>
+            <div className="px-8">{children}</div>
             <TailwindIndicator />
             <Analytics/>
           </ThemeProvider>
