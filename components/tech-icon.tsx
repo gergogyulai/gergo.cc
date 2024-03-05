@@ -41,7 +41,8 @@ const TechIcon: React.FC<TechIconProps> = ({ name }) => {
     ),
     Astro: () => (
       <a target="_blank" rel="noreferrer" href="https://astro.build/">
-        <Image src="/astro.svg" width={100} height={100} className="size-5" alt="Astro Logo" />
+        <Image src="/astro.svg" width={100} height={100} className="hidden size-5 dark:block" alt="Rust Logo" />
+        <Image src="/astro-dark.svg" width={100} height={100} className="block size-5 dark:hidden" alt="Astro Logo" />
       </a>
     ),
     ReactNative: () => (
