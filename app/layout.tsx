@@ -1,6 +1,6 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
-
+import Head from "next/head"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.ico?v=2",
+    shortcut: "/favicon-16x16.png?v=2",
+    apple: "/apple-touch-icon.png?v=2",
   },
 }
 
@@ -32,6 +32,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
+        <Head>
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2"/>
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2"/>
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2"/>
+          <link rel="manifest" href="/site.webmanifest?v=2"/>
+          <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#5bbad5"/>
+          <link rel="shortcut icon" href="/favicon.ico?v=2"/>
+          <meta name="msapplication-TileColor" content="#da532c"/>
+          <meta name="theme-color" content="#ffffff"/>
+          <script defer src="https://eu.umami.is/script.js" data-website-id="fd74ee9b-7a22-444a-b710-1c87b9e36963"></script>
+        </Head>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
