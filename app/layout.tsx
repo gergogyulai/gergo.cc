@@ -6,6 +6,7 @@ import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Analytics } from "@/components/analytics"
 
 export const metadata: Metadata = {
   title: {
@@ -51,9 +52,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div>{children}</div>
             <TailwindIndicator />
+            <Analytics/>
           </ThemeProvider>
         </body>
-        <script defer src="https://eu.umami.is/script.js" data-website-id="fd74ee9b-7a22-444a-b710-1c87b9e36963"></script>
       </html>
     </>
   )
