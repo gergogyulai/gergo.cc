@@ -41,7 +41,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <link rel="shortcut icon" href="/favicon.ico?v=2"/>
           <meta name="msapplication-TileColor" content="#da532c"/>
           <meta name="theme-color" content="#ffffff"/>
-          <script defer src="https://eu.umami.is/script.js" data-website-id="fd74ee9b-7a22-444a-b710-1c87b9e36963"></script>
         </Head>
         <body
           className={cn(
@@ -54,6 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <TailwindIndicator />
           </ThemeProvider>
         </body>
+        <script defer src="https://eu.umami.is/script.js" data-website-id="fd74ee9b-7a22-444a-b710-1c87b9e36963"></script>
       </html>
     </>
   )
