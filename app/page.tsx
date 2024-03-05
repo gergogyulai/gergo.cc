@@ -20,14 +20,17 @@ import { ProjectCard } from "@/components/project-card"
 
 export default function IndexPage() {
   return (
-    <main className="flex min-h-screen select-none flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen select-none flex-col items-center justify-between pt-24">
       <div className="flex flex-col justify-center gap-8">
-        <div className="flex items-center justify-between">
-          <h1 className="text-left text-2xl font-bold tracking-tighter">
-            Gergo
-            <span className="ml-2 text-black/50 dark:text-white/60">/ˈɡɛr.ɡøː/</span>
-          </h1>
-          <SiteHeader />
+        <div>
+          <div className="flex items-center justify-between">
+            <h1 className="text-left text-2xl font-bold tracking-tighter">
+              Gergo
+              <span className="ml-2 text-black/50 dark:text-white/60">/ˈɡɛr.ɡøː/</span>
+            </h1>
+            <SiteHeader />
+          </div>
+          <span className="font-medium text-black/50 dark:text-white/50">Trash code, but it works. (Sometimes)</span>
         </div>
         <div className="flex flex-col gap-4 lowercase">
           <ProjectCard title="satori" description="school timetable web application built with svelte(kit)" status="InProgress" link="https://satori.one" tech={["Svelte", "Tailwind"]} />
