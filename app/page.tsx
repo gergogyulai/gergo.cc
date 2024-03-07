@@ -23,6 +23,7 @@ export default function IndexPage() {
                     <ProjectCard title="minitools" description="a collection of small tools written tipically in python, created for occasional personal use." status="Repo" tech={["Python", "Javascript"]} />
                     <ProjectCard title="lofiplayer" description="minimally designed webapp for listening to 24/7 lofi radios" status="Archived" link="https://lofiplayer.live" tech={["Nextjs", "Tailwind"]} />
                     <ProjectCard title="lofiplayer mobile" description="mobile version of lofiplayer.live" status="Abandoned" tech={["Nextjs", "Tailwind"]} />
+                    <ProjectCard title="lumina" description="alternative simple, minimal and lightweight ui for truenas scale" status="Planning" tech={["Svelte"]}/>
                 </div>
             </div>
             <CreditsDialog/>
