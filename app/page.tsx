@@ -39,6 +39,7 @@ export default function IndexPage() {
                         title="minitools" 
                         description="a collection of small tools written tipically in python, created for occasional personal use." 
                         status="Repo" 
+                        repolink="https://github.com/gergogyulai/minitools"
                         tech={["Python", "Javascript"]}
                     />
                     <ProjectCard 

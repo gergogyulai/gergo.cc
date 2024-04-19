@@ -22,8 +22,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, st
                 <ProjectHoverCard title={title} description={description} status={status} tech={tech} sitelink={sitelink} docslink={docslink} repolink={repolink}>
                     <div className="max-w-lg">
                         <div className="inline-flex gap-2">
-                            {sitelink ? (
+                            { sitelink ? (
                                 <a href={sitelink} target="_blank" rel="noopener noreferrer" className="cursor-pointer font-medium underline underline-offset-2">
+                                    {title}
+                                </a>
+                            ) : repolink ? (
+                                <a href={repolink} target="_blank" rel="noopener noreferrer" className="cursor-pointer font-medium underline underline-offset-2">
                                     {title}
                                 </a>
                             ) : (
