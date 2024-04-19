@@ -28,7 +28,7 @@ export const ProjectHoverCard: React.FC<ProjectCardHoverProps> = ({children, tit
                 </HoverCardTrigger>
                 <HoverCardContent className="w-80">
                   <div className="flex justify-between space-x-4">
-                    <div className="space-y-1 w-full h-full">
+                    <div className="size-full space-y-1">
                       <div className="flex justify-between">
                         {sitelink ? (
                           <a href={sitelink} target="_blank" rel="noopener noreferrer">
@@ -63,9 +63,9 @@ export const ProjectHoverCard: React.FC<ProjectCardHoverProps> = ({children, tit
                       </div> */}
                       <Separator className="my-4" />
                       <div className="flex gap-2">
-                        {sitelink && <a target="_blank" className="text-sm underline cursor-pointer" href={sitelink}>site</a>}
-                        {repolink && <a target="_blank" className="text-sm underline cursor-pointer" href={repolink}>source</a>}
-                        {docslink && <a target="_blank" className="text-sm underline cursor-pointer" href={docslink}>docs</a>}
+                        {sitelink && <a target="_blank" className="cursor-pointer text-sm underline" href={sitelink} rel="noreferrer">site</a>}
+                        {repolink && <a target="_blank" className="cursor-pointer text-sm underline" href={repolink} rel="noreferrer">source</a>}
+                        {docslink && <a target="_blank" className="cursor-pointer text-sm underline" href={docslink} rel="noreferrer">docs</a>}
                       </div>
                     </div>
                   </div>
