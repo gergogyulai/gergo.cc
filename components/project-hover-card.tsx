@@ -62,6 +62,7 @@ export const ProjectHoverCard: React.FC<ProjectCardHoverProps> = ({children, tit
                         ))}
                       </div> */}
                       <Separator className="my-4" />
+                      {!sitelink && !repolink && !docslink && <p className="text-sm">{"no links available :("}</p>}
                       <div className="flex gap-2">
                         {sitelink && <a target="_blank" className="cursor-pointer text-sm underline" href={sitelink} rel="noreferrer">site</a>}
                         {repolink && <a target="_blank" className="cursor-pointer text-sm underline" href={repolink} rel="noreferrer">source</a>}
