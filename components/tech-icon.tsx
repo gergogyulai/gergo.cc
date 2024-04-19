@@ -28,7 +28,7 @@ const TechIcon: React.FC<TechIconProps> = ({ name }) => {
     ),
     Typescript: () => (
       <a target="_blank" rel="noreferrer" href="https://www.typescriptlang.org/">
-        <Image src="/typescript.svg" width={100} height={100} className="size-5" alt="Typescript Logo" />
+        <Image src="/icons/typescript.svg" width={100} height={100} className="size-5" alt="Typescript Logo" />
       </a>
     ),
     Javascript: () => (
@@ -48,6 +48,16 @@ const TechIcon: React.FC<TechIconProps> = ({ name }) => {
     ReactNative: () => (
       <a target="_blank" rel="noreferrer" href="https://reactnative.dev/">
         <Image src="/icons/react.svg" width={100} height={100} className="size-5" alt="ReactNative Logo" />
+      </a>
+    ),
+    React: () => (
+      <a target="_blank" rel="noreferrer" href="https://reactjs.org/">
+        <Image src="/icons/react.svg" width={100} height={100} className="size-5" alt="React Logo" />
+      </a>
+    ),
+    Vite: () => (
+      <a target="_blank" rel="noreferrer" href="https://vitejs.dev/">
+        <Image src="/icons/vite.svg" width={100} height={100} className="size-5" alt="Vite Logo" />
       </a>
     ),
     C: () => (

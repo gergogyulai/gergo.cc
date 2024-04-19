@@ -39,6 +39,11 @@ const chipMap = {
         <div className="flex items-center justify-center rounded-lg bg-teal-100 px-2 text-xs font-medium text-teal-800 dark:bg-teal-900 dark:text-teal-300">
             <span>repository</span>
         </div>
+    ),
+    OnHold: () => (
+        <div className="flex items-center justify-center rounded-lg bg-yellow-100 px-2 text-xs font-medium text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
+            <span>on hold</span>
+        </div>
     )
 };
 

@@ -13,8 +13,8 @@ export function CreditsDialog() {
     return (
         <div className="group fixed bottom-0 right-2">
             <Dialog>
-                <DialogTrigger>
-                    <Icons.plusCircle className=" text-black/60 transition ease-in-out hover:scale-105 hover:text-black/40 active:scale-95 dark:text-white/60 dark:hover:text-white/40 "/>
+                <DialogTrigger className={"p-2 text-white/60 hover:text-white transition ease-in-out cursor-pointer"}>
+                    credits
                 </DialogTrigger>
                 <DialogContent>
                     <DialogHeader>

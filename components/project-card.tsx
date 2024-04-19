@@ -6,7 +6,7 @@ interface ProjectCardProps {
     title: string;
     description: string;
     tech?: string[];
-    status: "Archived" | "Unknown" | "InProgress" | "Completed" | "Planning" | "Abandoned" | "Repo";
+    status: "Archived" | "Unknown" | "InProgress" | "Completed" | "Planning" | "Abandoned" | "Repo" | "OnHold";
     link?: string;
 }
 
