@@ -14,10 +14,6 @@ export const metadata: Metadata = {
         template: `%s - ${siteConfig.name}`,
     },
     description: siteConfig.description,
-    // themeColor: [
-    //     { media: "(prefers-color-scheme: light)", color: "white" },
-    //     { media: "(prefers-color-scheme: dark)", color: "black" },
-    // ],
     icons: {
         icon: "/favicon.ico?v=2",
         shortcut: "/favicon-16x16.png?v=2",
@@ -41,6 +37,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#5bbad5"/>
                     <link rel="shortcut icon" href="/favicon.ico?v=2"/>
                     <meta name="msapplication-TileColor" content="#da532c"/>
+                    <meta property="og:image" content="/og.png" />
+                    <meta property="og:image:type" content="image/png" />
+                    <meta property="og:image:width" content="1280" />
+                    <meta property="og:image:height" content="720" />
                 </Head>
                 <body
                   className={cn(
