@@ -74,9 +74,17 @@ export default function IndexPage() {
                     />
                     <ProjectCard 
                         title="movie-web-tv" 
-                        description="a modified version of the original movie-web/movie-web optimized for smart tvs" 
+                        description="a modified version of the original movie-web/movie-web optimized for smart tvs"
+                        repoLink="https://github.com/gergogyulai/cloneall"
                         status="InProgress" 
                         tech={["React", "Vite", "Tailwind", "Typescript"]}
+                    />
+                    <ProjectCard
+                      title="cloneall"
+                      description="a simple cli tool written in go, to clone the whole github orgs/users"
+                      status="Finished"
+                      repoLink="https://github.com/gergogyulai/movie-web-tv"
+                      tech={{"Go"}}
                     />
                 </div>
             </div>
