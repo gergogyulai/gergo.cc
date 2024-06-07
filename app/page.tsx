@@ -84,7 +84,7 @@ export default function IndexPage() {
                       description="a simple cli tool written in go, to clone the whole github orgs/users"
                       status="Finished"
                       repoLink="https://github.com/gergogyulai/movie-web-tv"
-                      tech={{"Go"}}
+                      tech={{}}
                     />
                 </div>
             </div>
