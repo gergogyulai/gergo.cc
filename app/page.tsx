@@ -15,17 +15,6 @@ export default function IndexPage() {
                     <span className="font-medium text-black/50 dark:text-white/50">Trash code, but it works. (Sometimes)</span>
                 </div>
                 <div className="flex flex-col gap-4 lowercase">
-                <a href={"https://fuckcjs.gergo.cc"} target="_blank" rel="noopener noreferrer">
-                    <div className="max-w-lg border border-red-700/30 rounded-lg p-2  bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 cursor-pointer">
-                        <div className="inline-flex gap-2">
-                            <p className="uppercase font-bold">Fuck CJS</p>
-                        </div>
-                        <p className="line-clamp-2 font-medium opacity-50">
-                            News flash: CommonJS is a piece of shit
-                        </p>
-                    </div>
-                </a>
-
                     <ProjectCard 
                         title="satori" 
                         description="a simple, minimalistic school timetable web application" 
