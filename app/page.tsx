@@ -1,83 +1,75 @@
-import { SiteHeader } from "@/components/site-header"
-import { ProjectCard } from "@/components/project-card"
-import { CreditsDialog } from "@/components/credits-dialog"
-import NameCard from "@/components/namecard"
+import NameCard from "@/components/namecard";
+import { SiteHeader } from "@/components/site-header";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { tools } from "@/config/tools";
+import { projects } from "@/config/projects";
+import ProjectCard from "@/components/project-card";
+import ToolLink from "@/components/tool-links";
 
-export default function IndexPage() {
-    return (
-        <main className="flex min-h-screen select-none flex-col items-center justify-between pt-24">
-            <div className="flex flex-col justify-center gap-8">
-                <div>
-                    <div className="flex items-center justify-between">
-                        <NameCard/>
-                        <SiteHeader />
-                    </div>
-                    <span className="font-medium text-black/50 dark:text-white/50">Trash code, but it works. (Sometimes)</span>
-                </div>
-                <div className="flex flex-col gap-4 lowercase">
-                    <ProjectCard 
-                        title="satori" 
-                        description="a simple, minimalistic school timetable web application" 
-                        status="InProgress" 
-                        sitelink="https://satori.one" 
-                        tech={["Svelte", "Tailwind"]}
-                    />
-                    <ProjectCard 
-                        title="satori mobile" 
-                        description="school timetable mobile application" 
-                        status="Planning" 
-                        sitelink="https://app.satori.one" 
-                        tech={["Astro", "Tailwind"]}
-                    />
-                    <ProjectCard 
-                        title="sideron" 
-                        description="a cli tool written in rust for managing vercel edgeconfig objects" 
-                        status="InProgress" 
-                        tech={["Rust"]}
-                    />
-                    <ProjectCard 
-                        title="minitools" 
-                        description="a collection of small tools written tipically in python, created for occasional personal use." 
-                        status="Repo" 
-                        repolink="https://github.com/gergogyulai/minitools"
-                        tech={["Python", "Javascript"]}
-                    />
-                    <ProjectCard 
-                        title="lofiplayer" 
-                        description="minimally designed webapp for listening to 24/7 lofi radios" 
-                        status="Archived" 
-                        sitelink="https://lofiplayer.live" 
-                        tech={["Nextjs", "Tailwind"]}
-                    />
-                    <ProjectCard 
-                        title="lofiplayer mobile" 
-                        description="mobile version of lofiplayer.live" 
-                        status="Abandoned" 
-                        tech={["Nextjs", "Tailwind"]}
-                    />
-                    <ProjectCard 
-                        title="lumina" 
-                        description="alternative simple, minimal and lightweight ui for truenas scale" 
-                        status="OnHold" 
-                        tech={["Svelte"]}
-                    />
-                    <ProjectCard 
-                        title="movie-web-tv" 
-                        description="a modified version of the original movie-web/movie-web optimized for smart tvs"
-                        repoLink="https://github.com/gergogyulai/cloneall"
-                        status="InProgress" 
-                        tech={["React", "Vite", "Tailwind", "Typescript"]}
-                    />
-                    <ProjectCard
-                      title="cloneall"
-                      description="a simple cli tool written in go, to clone the whole github orgs/users"
-                      status="Finished"
-                      repoLink="https://github.com/gergogyulai/movie-web-tv"
-                      tech={{}}
-                    />
-                </div>
-            </div>
-            <CreditsDialog/>
-        </main>
-    )
+export default function Homepage() {
+  return (
+    <section className="flex flex-col gap-16">
+      <div className="space-y-4 max-w-4xl">
+        <div className="flex justify-between">
+          <NameCard/>
+          <SiteHeader/>
+        </div>
+        <p className="text-muted-foreground line-clamp-4">
+          I'm Gergo, an indie developer and "designer". I build fast, accessible, user-friendly websites and apps. I love learning, growing, and minimalism.
+        </p>
+      </div>
+
+      <div className="space-y-4 max-w-4xl">
+        <div>
+          <h3 className="text-2xl font-bold">
+            Technologies and Tools by me
+          </h3>
+          <div className="space-y-2">
+            <p className="text-muted-foreground">
+              Here are some technologies and tools I use to build websites and applications. I prefer minimalism and simplicity, so I keep my tech stack simple.
+            </p>
+            <p className="text-muted-foreground">
+              I love using bleeding-edge technologies and tools, so my tech stack is always evolving.
+            </p>
+          </div>
+        </div>
+        <div className="flex justify-center gap-4 flex-wrap lg:flex-nowrap">
+          {tools.map((tool) => (
+            <ToolLink key={tool.href} tool={tool} />
+          ))}
+        </div>
+      </div>
+
+
+      <div className="space-y-4 max-w-4xl">
+        <div>
+          <h3 className="text-2xl font-bold">
+            My Projects:
+          </h3>
+          <p className="text-muted-foreground">
+            Here are some of my projects I've worked on.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4">
+          {projects.map((project) => (
+            <ProjectCard project={project} key={project.title}/>
+          ))}
+        </div>
+        <div>
+          <Link href="https://github.com/gergogyulai" target="_blank">
+            <Button variant={"ghost"}>
+              View even more projects
+            </Button>
+          </Link>
+          <Link href="mailto:gergo@gergo.cc">
+            <Button variant={"ghost"}>
+              gergo@gergo.cc
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }

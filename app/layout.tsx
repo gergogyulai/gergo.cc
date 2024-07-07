@@ -1,60 +1,48 @@
-import "@/styles/globals.css"
-import { Metadata } from "next"
-import Head from "next/head"
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
+import "./globals.css";
+import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider"
-import { Analytics } from "@/components/analytics"
+import localFont from "next/font/local";
+
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+});
 
 export const metadata: Metadata = {
-    title: {
-        default: siteConfig.name,
-        template: `%s - ${siteConfig.name}`,
-    },
-    description: siteConfig.description,
-    icons: {
-        icon: "/favicon.ico?v=2",
-        shortcut: "/favicon-16x16.png?v=2",
-        apple: "/apple-touch-icon.png?v=2",
-    },
-}
+  title: "Gergo's Portfolio",
+  description: "Indie developer, designer and maker. I build things for the web.",
+  metadataBase: new URL('https://gergo.cc'),
+  openGraph: {
+    title: "Gergo's Portfolio",
+    description: "Indie developer, designer and maker. I build things for the web.",
+    type: "website",
+    images: [
+        {
+        url: "/og-image.png",
+        width: 1380,
+        height: 934,
+        alt: "Gergo's Portfolio",
+      }
+    ]
+  },
+};
 
-interface RootLayoutProps {
-    children: React.ReactNode
-}
 
-export default function RootLayout({ children }: RootLayoutProps) {
-    return (
-        <>
-            <html lang="en" suppressHydrationWarning>
-                <Head>
-                    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2"/>
-                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2"/>
-                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2"/>
-                    <link rel="manifest" href="/site.webmanifest?v=2"/>
-                    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2" color="#5bbad5"/>
-                    <link rel="shortcut icon" href="/favicon.ico?v=2"/>
-                    <meta name="msapplication-TileColor" content="#da532c"/>
-                    <meta property="og:image" content="/og.png" />
-                    <meta property="og:image:type" content="image/png" />
-                    <meta property="og:image:width" content="1280" />
-                    <meta property="og:image:height" content="720" />
-                </Head>
-                <body
-                  className={cn(
-                    "min-h-screen bg-background font-sans antialiased",
-                    fontSans.variable
-                  )}
-                >
-                    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                        <div className="px-8">{children}</div>
-                        <TailwindIndicator />
-                        <Analytics/>
-                    </ThemeProvider>
-                </body>
-            </html>
-        </>
-    )
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+        <link rel="icon" href="favicon.png" type="image/x-icon" />
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <div className="font-sans flex flex-col items-center min-h-screen py-16 px-10 gap-16 container">
+              {children}
+            </div>
+          </ThemeProvider>
+        </body>
+    </html>
+  );
 }

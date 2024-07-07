@@ -1,76 +1,54 @@
-import React from "react";
-
-import { Chip } from "@/components/chips";
+import React from 'react'
+import { BookMarked, Globe } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import TechIcon from "@/components/tech-icon";
-import { ProjectHoverCard } from "./project-hover-card";
+import ProgressChip from '@/components/progress-chips';
+import { type Project } from '@/config/projects'
 
-interface ProjectCardProps {
-    title: string;
-    description: string;
-    tech?: string[];
-    status: "Archived" | "Unknown" | "InProgress" | "Completed" | "Planning" | "Abandoned" | "Repo" | "OnHold";
-    sitelink?: string;
-    repolink?: string;
-    docslink?: string;
-    disableHoverCard?: boolean;
+const ProjectCard = ({project} : { project: Project}) => {
+  return (
+    <div className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm py-4 px-4">
+      <div className="flex flex-col justify-between">
+        <div className="flex flex-col">
+          <h4 className=" font-medium text-lg">{project.title}</h4>
+          <p className=" text-sm text-muted-foreground line-clamp-2">{project.description}</p>
+        </div>
+        <div className="flex gap-2 items-center">
+          <div className="flex gap-2">
+            {project.tags && project.tags.map((tag) => (
+              <TechIcon name={tag} key={tag} />
+            ))}
+          </div>
+          <div>
+            {project.status && <ProgressChip name={project.status} />}
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col justify-between">
+        {project.href && (
+          <Link href={project.href} target="_blank">
+            <Button variant={"ghost"} size={"icon"}>
+              <Globe className="size-5"/>
+              <span className="sr-only">
+                Visit Webapp
+              </span>
+            </Button>
+          </Link>
+        )}
+        {project.githubRepo && (
+          <Link href={project.githubRepo} target="_blank">
+            <Button variant={"ghost"} size={"icon"}>
+              <BookMarked className="size-5"/>
+              <span className="sr-only">
+                Repository on GitHub
+              </span>
+            </Button>
+          </Link>
+        )}
+      </div>
+    </div>
+  )
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, status, tech, sitelink, repolink, docslink, disableHoverCard }) => {
-    return (
-        <>
-            { !disableHoverCard ? (
-                <ProjectHoverCard title={title} description={description} status={status} tech={tech} sitelink={sitelink} docslink={docslink} repolink={repolink}>
-                    <div className="max-w-lg">
-                        <div className="inline-flex gap-2">
-                            { sitelink ? (
-                                <a href={sitelink} target="_blank" rel="noopener noreferrer" className="cursor-pointer font-medium underline underline-offset-2">
-                                    {title}
-                                </a>
-                            ) : repolink ? (
-                                <a href={repolink} target="_blank" rel="noopener noreferrer" className="cursor-pointer font-medium underline underline-offset-2">
-                                    {title}
-                                </a>
-                            ) : (
-                                <p className="font-medium underline underline-offset-2">
-                                    {title}
-                                </p>
-                            )}
-                            <Chip status={status} />
-                            <div className="flex h-6 items-center justify-center gap-2">
-                                {tech && tech.map((item, index) => (
-                                    <TechIcon key={index} name={item} />
-                                ))}
-                            </div>
-                        </div>
-                        <p className="line-clamp-2 font-medium text-black/60 dark:text-white/60">
-                            {description}
-                        </p>
-                    </div>
-                </ProjectHoverCard>
-            ) : (
-                <div className="max-w-lg">
-                    <div className="inline-flex gap-2">
-                        {sitelink ? (
-                            <a href={sitelink} target="_blank" rel="noopener noreferrer" className="cursor-pointer font-medium underline underline-offset-2">
-                                {title}
-                            </a>
-                        ) : (
-                            <p className="font-medium underline underline-offset-2">
-                                {title}
-                            </p>
-                        )}
-                        <Chip status={status} />
-                        <div className="flex h-6 items-center justify-center gap-2">
-                            {tech && tech.map((item, index) => (
-                                <TechIcon key={index} name={item} />
-                            ))}
-                        </div>
-                    </div>
-                    <p className="line-clamp-2 font-medium text-black/60 dark:text-white/60">
-                        {description}
-                    </p>
-                </div>
-            )}
-        </>
-    );
-}
+export default ProjectCard
