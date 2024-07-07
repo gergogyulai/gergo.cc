@@ -27,7 +27,7 @@ export const projects: Project[] = [
     title: "Noisr",
     description: "Genrate noise texture with custom size, density and color.",
     href: "https://noisr.gergo.cc",
-    githubRepo: "github.com/gergogyulai/noisr",
+    githubRepo: "https://github.com/gergogyulai/noisr",
     status: "Shipped",
     tags: [
       "Nextjs",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     title: "Minitools",
     description: "A collection of simple and useful tools. Typically written in python or JavaScript.",
-    githubRepo: "github.com/gergogyulai/minitools",
+    githubRepo: "https://github.com/gergogyulai/minitools",
     status: "Repo",
     tags: [
       "Javascript", 
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     title: "movie-web-tv",
     description: "A modified version of the original movie-web project optimized for use on Smart TVs.",
-    githubRepo: "github.com/gergogyulai/movie-web-tv",
+    githubRepo: "https://github.com/gergogyulai/movie-web-tv",
     status: "Unknown",
     tags: [
       "React", 
