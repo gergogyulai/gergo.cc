@@ -17,7 +17,7 @@ export default function Homepage() {
           <SiteHeader/>
         </div>
         <p className="text-muted-foreground line-clamp-4">
-          I'm Gergo, an indie developer and "designer". I build fast, accessible, user-friendly websites and apps. I love learning, growing, and minimalism.
+          {"I&#39;m Gergo, an indie developer and &quot;designer&quot;. I build fast, accessible, user-friendly websites and apps. I love learning, growing, and minimalism."}
         </p>
       </div>
 
@@ -49,7 +49,7 @@ export default function Homepage() {
             My Projects:
           </h3>
           <p className="text-muted-foreground">
-            Here are some of my projects I've worked on.
+            {"Here are some of my projects I&apos;ve worked on."}
           </p>
         </div>
         <div className="flex flex-col gap-4">
