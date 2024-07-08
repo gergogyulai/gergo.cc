@@ -31,7 +31,7 @@ export default function Homepage() {
               Here are some technologies and tools I use to build websites and applications. I prefer minimalism and simplicity, so I keep my tech stack simple.
             </p>
             <p className="text-muted-foreground">
-              I love using bleeding-edge technologies and tools, so my tech stack is always evolving.
+              I use bleeding-edge technologies and tools most of the time, so my tech stack is always evolving.
             </p>
           </div>
         </div>
