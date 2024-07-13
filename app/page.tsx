@@ -63,9 +63,9 @@ export default function Homepage() {
               View even more projects
             </Button>
           </Link>
-          <Link href="mailto:gergo@gergo.cc">
+          <Link href="mailto:hello@gergo.cc">
             <Button variant={"ghost"}>
-              gergo@gergo.cc
+              hello@gergo.cc
             </Button>
           </Link>
         </div>
