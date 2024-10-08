@@ -39,8 +39,8 @@ export const projects: Project[] = [
     {
     title: "Ye Tweets",
     description: "A more or less complete archive of every tweet ever published by Kanye West",
-    href: "https://ye-tweets.vercel.app/",
-    githubRepo: "https://github.com/gergogyulai/ye-tweets",
+    href: "https://yetweets.xyz/",
+    githubRepo: "https://github.com/gergogyulai/yetweets",
     status: "InProgress",
     tags: [
       "Nextjs",
