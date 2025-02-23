@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     title: "Lofiplayer.live",
     description: "A minimalistic, 24/7 lofi music player for daily work, study, or relaxation.",
-    href: "https://lofiplayer.live",
+    href: "https://lofiplayer.gergo.cc",
     status: "Shipped",
     tags: [
       "Nextjs", 
@@ -24,11 +24,23 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: "Noisr",
-    description: "Genrate noise texture with custom size, density and color.",
-    href: "https://noisr.gergo.cc",
-    githubRepo: "https://github.com/gergogyulai/noisr",
+    title: "Magneto",
+    description: "Automatically grab magnet links in Chrome. Privacy-focused and built with Svelte.",
+    githubRepo: "https://github.com/gergogyulai/magneto",
     status: "Shipped",
+    tags: [
+      "Svelte",
+      "Tailwind",
+      "Vite",
+      "Typescript",
+    ]
+  },
+  {
+    title: "Ye Tweets",
+    description: "A more or less complete archive of every tweet ever published by Kanye West",
+    href: "https://yetweets.xyz/",
+    githubRepo: "https://github.com/gergogyulai/yetweets",
+    status: "InProgress",
     tags: [
       "Nextjs",
       "Tailwind",
@@ -36,12 +48,12 @@ export const projects: Project[] = [
       "Vercel"
     ]
   },
-    {
-    title: "Ye Tweets",
-    description: "A more or less complete archive of every tweet ever published by Kanye West",
-    href: "https://yetweets.xyz/",
-    githubRepo: "https://github.com/gergogyulai/yetweets",
-    status: "InProgress",
+  {
+    title: "Noisr",
+    description: "Genrate noise texture with custom size, density and color.",
+    href: "https://noisr.gergo.cc",
+    githubRepo: "https://github.com/gergogyulai/noisr",
+    status: "Shipped",
     tags: [
       "Nextjs",
       "Tailwind",
@@ -72,13 +84,13 @@ export const projects: Project[] = [
       "Vite"
     ]
   },
-  {
-    title : "Lofiplayer Mobile",
-    description: "An upcoming mobile version of the Lofiplayer.live webapp.",
-    status: "Planning",
-    tags: [
-      "ReactNative",
-      "Typescript"
-    ]
-  }
+  // {
+  //   title : "Lofiplayer Mobile",
+  //   description: "An upcoming mobile version of the Lofiplayer.live webapp.",
+  //   status: "Planning",
+  //   tags: [
+  //     "ReactNative",
+  //     "Typescript"
+  //   ]
+  // }
 ]

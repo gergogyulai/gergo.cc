@@ -17,21 +17,21 @@ export default function Homepage() {
           <SiteHeader/>
         </div>
         <p className="text-muted-foreground line-clamp-4">
-          I&#39;m Gergo, an indie developer and &quot;designer&quot;. I build fast, accessible, user-friendly websites and apps. I love learning, growing, and minimalism.
+          I&#39;m Gergo, a developer. I build fast, accessible, user-friendly websites and apps. I build things for the web.
         </p>
       </div>
 
       <div className="space-y-4 max-w-4xl">
-        <div>
+        <div className="space-y-1">
           <h3 className="text-2xl font-bold">
-            Technologies and Tools by me
+            My Stack:
           </h3>
           <div className="space-y-2">
             <p className="text-muted-foreground">
-              Here are some technologies and tools I use to build websites and applications. I prefer minimalism and simplicity, so I keep my tech stack simple.
+            {"These are the technologies and tools I use to craft websites and applications. I prioritize minimalism and efficiency, keeping my stack lean and effective."}
             </p>
             <p className="text-muted-foreground">
-              I use bleeding-edge technologies and tools most of the time, so my tech stack is always evolving.
+              {"Always exploring cutting-edge technologies, so my stack evolves constantly as I refine my workflow and adopt new tools."}
             </p>
           </div>
         </div>
@@ -43,8 +43,8 @@ export default function Homepage() {
       </div>
 
 
-      <div className="space-y-4 max-w-4xl">
-        <div>
+      <div className="space-y-6 max-w-4xl">
+        <div className="space-y-1">
           <h3 className="text-2xl font-bold">
             My Projects:
           </h3>
@@ -57,15 +57,10 @@ export default function Homepage() {
             <ProjectCard project={project} key={project.title}/>
           ))}
         </div>
-        <div>
+        <div className="flex w-full justify-center items-center">
           <Link href="https://github.com/gergogyulai" target="_blank">
             <Button variant={"ghost"}>
-              View even more projects
-            </Button>
-          </Link>
-          <Link href="mailto:hello@gergo.cc">
-            <Button variant={"ghost"}>
-              hello@gergo.cc
+              More on GitHub
             </Button>
           </Link>
         </div>

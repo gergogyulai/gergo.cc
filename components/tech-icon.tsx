@@ -30,7 +30,7 @@ const iconMap: Record<IconName, React.FC> = {
     </a>
   ),
   Svelte: () => (
-    <a target="_blank" rel="noreferrer" href="https://kit.svelte.dev/">
+    <a target="_blank" rel="noreferrer" href="https://svelte.dev/">
       <Image src="/icons/svelte.svg" width={100} height={100} className="size-5" alt="Svelte Logo" />
     </a>
   ),
