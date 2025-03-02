@@ -17,7 +17,7 @@ export default function Homepage() {
     show: {
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.05
+        delayChildren: 0.07
       }
     }
   };
@@ -28,7 +28,7 @@ export default function Homepage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.05,
-        delayChildren: 0.02
+        delayChildren: 0.03
       }
     }
   };
