@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider"
 import localFont from "next/font/local";
 import { Analytics } from "@/components/analytics";
+import Shortcuts from "@/components/shortcuts";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,6 +42,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           <Analytics />
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <Shortcuts />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <div className="font-sans flex flex-col items-center min-h-screen py-16 px-10 gap-16 container">
               {children}
