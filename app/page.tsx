@@ -1,3 +1,5 @@
+'use client'
+
 import NameCard from "@/components/namecard";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
@@ -7,22 +9,86 @@ import { tools } from "@/config/tools";
 import { projects } from "@/config/projects";
 import ProjectCard from "@/components/project-card";
 import ToolLink from "@/components/tool-links";
+import { motion } from "framer-motion";
 
 export default function Homepage() {
+  const pageContainer = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.05
+      }
+    }
+  };
+
+  const sectionContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.02
+      }
+    }
+  };
+
+  const toolsContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.03,
+        delayChildren: 0.03
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] }
+    }
+  };
+
   return (
-    <section className="flex flex-col gap-16">
-      <div className="space-y-4 max-w-4xl">
-        <div className="flex justify-between">
+    <motion.section 
+      className="flex flex-col gap-16"
+      variants={pageContainer}
+      initial="hidden"
+      animate="show"
+    >
+      {/* Header Section */}
+      <motion.div 
+        className="space-y-4 max-w-4xl"
+        variants={sectionContainer}
+      >
+        <motion.div 
+          className="flex justify-between"
+          variants={item}
+        >
           <NameCard/>
           <SiteHeader/>
-        </div>
-        <p className="text-muted-foreground line-clamp-4">
+        </motion.div>
+        <motion.p 
+          className="text-muted-foreground line-clamp-4"
+          variants={item}
+        >
           I&#39;m Gergo, a developer. I build fast, accessible, user-friendly websites and apps. I build things for the web.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
-      <div className="space-y-4 max-w-4xl">
-        <div className="space-y-1">
+      {/* Stack Section */}
+      <motion.div 
+        className="space-y-4 max-w-4xl"
+        variants={sectionContainer}
+      >
+        <motion.div 
+          className="space-y-1"
+          variants={item}
+        >
           <h3 className="text-2xl font-bold">
             My Stack:
           </h3>
@@ -34,37 +100,59 @@ export default function Homepage() {
               {"Always exploring cutting-edge technologies, so my stack evolves constantly as I refine my workflow and adopt new tools."}
             </p>
           </div>
-        </div>
-        <div className="flex justify-center gap-4 flex-wrap lg:flex-nowrap">
-          {tools.map((tool) => (
-            <ToolLink key={tool.href} tool={tool} />
+        </motion.div>
+        <motion.div 
+          className="flex justify-center gap-4 flex-wrap lg:flex-nowrap"
+          variants={toolsContainer}
+        >
+          {tools.map((tool, index) => (
+            <motion.div key={tool.href} variants={item}>
+              <ToolLink tool={tool} />
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-
-      <div className="space-y-6 max-w-4xl">
-        <div className="space-y-1">
+      {/* Projects Section */}
+      <motion.div 
+        className="space-y-6 max-w-4xl"
+        variants={sectionContainer}
+      >
+        <motion.div 
+          className="space-y-1"
+          variants={item}
+        >
           <h3 className="text-2xl font-bold">
             My Projects:
           </h3>
           <p className="text-muted-foreground">
             Here are some of my projects I&apos;ve worked on.
           </p>
-        </div>
-        <div className="flex flex-col gap-4">
-          {projects.map((project) => (
-            <ProjectCard project={project} key={project.title}/>
+        </motion.div>
+        <motion.div 
+          className="flex flex-col gap-4"
+        >
+          {projects.map((project, index) => (
+            <motion.div 
+              key={project.title} 
+              variants={item}
+              custom={index}
+            >
+              <ProjectCard project={project} index={0}/>
+            </motion.div>
           ))}
-        </div>
-        <div className="flex w-full justify-center items-center">
+        </motion.div>
+        <motion.div 
+          className="flex w-full justify-center items-center"
+          variants={item}
+        >
           <Link href="https://github.com/gergogyulai" target="_blank">
             <Button variant={"ghost"}>
               More on GitHub
             </Button>
           </Link>
-        </div>
-      </div>
-    </section>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 }

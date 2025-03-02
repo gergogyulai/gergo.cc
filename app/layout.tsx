@@ -15,11 +15,11 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Gergo's Portfolio",
-  description: "Indie developer, designer and maker. I build things for the web.",
+  description: "Yet another portfolio site, but this one is mine.",
   metadataBase: new URL('https://gergo.cc'),
   openGraph: {
     title: "Gergo's Portfolio",
-    description: "Indie developer, designer and maker. I build things for the web.",
+    description: "Yet another portfolio site, but this one is mine.",
     type: "website",
     images: [
         {
@@ -37,7 +37,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <html lang="en" suppressHydrationWarning>
         <link rel="icon" href="favicon.png" type="image/x-icon" />
-        <Analytics />
+        <head>
+          <Analytics />
+        </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <div className="font-sans flex flex-col items-center min-h-screen py-16 px-10 gap-16 container">

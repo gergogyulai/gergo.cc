@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { BookMarked, Globe } from "lucide-react";
 import Link from "next/link";
@@ -5,10 +7,21 @@ import { Button } from "@/components/ui/button";
 import TechIcon from "@/components/tech-icon";
 import ProgressChip from '@/components/progress-chips';
 import { type Project } from '@/config/projects'
+import { motion } from 'framer-motion';
 
-const ProjectCard = ({project} : { project: Project}) => {
+const ProjectCard = ({project, index = 0} : { project: Project, index?: number}) => {
   return (
-    <div className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm py-4 px-4">
+    <motion.div 
+      className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm py-4 px-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.5, 
+        delay: index * 0.1,
+        ease: [0.4, 0, 0.2, 1]
+      }}
+      whileHover={{ scale: 1.02 }}
+    >
       <div className="flex flex-col justify-between">
         <div className="flex flex-col">
           <h4 className=" font-medium text-lg">{project.title}</h4>
@@ -47,7 +60,7 @@ const ProjectCard = ({project} : { project: Project}) => {
           </Link>
         )}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
