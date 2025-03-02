@@ -19,6 +19,7 @@ export type IconName =
   | "Vite"
   | "C"
   | "CPlus"
+  | "CSharp"
   | "Python"
   | "Golang"
   | "Vercel";
@@ -100,6 +101,11 @@ const iconMap: Record<IconName, React.FC> = {
       <Image src="/icons/vercel.svg" width={100} height={100} className="block size-5 dark:hidden" alt="Vercel Logo" />
     </a>
   ),
+  CSharp: () => (
+    <a target="_blank" rel="noreferrer" href="https://dotnet.microsoft.com/en-us/languages/csharp">
+      <Image src="/icons/csharp.svg" width={100} height={100} className="size-5" alt="CSharp Logo" />
+    </a>
+  )
 };
 
 const TechIcon: React.FC<TechIconProps> = ({ name }) => {

@@ -62,6 +62,15 @@ export const projects: Project[] = [
     ]
   },
   {
+    title: "Veyonctl",
+    description: "Simple CLI tool to take control of the Veyon Service on Windows systems.",
+    githubRepo: "https://github.com/gergogyulai/veyonctl",
+    status: "InProgress",
+    tags: [
+      "CSharp"
+    ]
+  },
+  {
     title: "Minitools",
     description: "A collection of simple and useful tools. Typically written in python or JavaScript.",
     githubRepo: "https://github.com/gergogyulai/minitools",
