@@ -8,7 +8,7 @@ export default function NameCard() {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center tracking-tighter leading-normal">
               <h1>Gergo</h1>
               <span className="text-muted-foreground transition-all duration-300 ease-in-out group-hover:tracking-wide dark:text-white/60">/{"ˈɡɛr.ɡøː/"}</span>
             </div>

@@ -8,11 +8,12 @@ export function SiteHeader() {
   return (
     <nav className="flex items-center gap-2">
       <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-        <Button variant="ghost" >
-          <div className="flex items-center gap-2">
+        <Button variant="outline" >
+          <div className="hidden md:flex items-center gap-2">
             <Icons.gitHub className="size-5" />
             <span className="font-mono bg-muted px-1.5 py-0.5 rounded-[7px] leading-none border border-primary/10 flex items-center justify-center">G</span>
           </div>
+          <Icons.gitHub className="size-5 block md:hidden" />
           <span className="sr-only">GitHub</span>
         </Button>
       </Link>

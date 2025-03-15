@@ -22,6 +22,9 @@ export type IconName =
   | "CSharp"
   | "Python"
   | "Golang"
+  | "PowerShell"
+  | "Electron"
+  | "Tauri"
   | "Vercel";
 
 const iconMap: Record<IconName, React.FC> = {
@@ -105,7 +108,23 @@ const iconMap: Record<IconName, React.FC> = {
     <a target="_blank" rel="noreferrer" href="https://dotnet.microsoft.com/en-us/languages/csharp">
       <Image src="/icons/csharp.svg" width={100} height={100} className="size-5" alt="CSharp Logo" />
     </a>
-  )
+  ),
+  PowerShell: () => (
+    <a target="_blank" rel="noreferrer" href="https://docs.microsoft.com/en-us/powershell/">
+      <Image src="/icons/powershell.svg" width={100} height={100} className="size-5" alt="PowerShell Logo" />
+    </a>
+  ),
+  Electron: () => (
+    <a target="_blank" rel="noreferrer" href="https://www.electronjs.org/">
+      <Image src="/icons/electron.svg" width={100} height={100} className="size-5" alt="Electron Logo" />
+    </a>
+  ),
+  Tauri: () => (
+    <a target="_blank" rel="noreferrer" href="https://tauri.app/">
+      <Image src="/icons/tauri.svg" width={100} height={100} className="size-5" alt="Tauri Logo" />
+    </a>
+  ),
+  
 };
 
 const TechIcon: React.FC<TechIconProps> = ({ name }) => {

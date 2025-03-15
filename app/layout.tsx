@@ -44,7 +44,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <Shortcuts />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <div className="font-sans flex flex-col items-center min-h-screen py-16 px-10 gap-16 container">
+            <div className="font-sans flex flex-col items-center min-h-screen py-16 md:px-10 gap-16 container">
               {children}
             </div>
           </ThemeProvider>

@@ -25,7 +25,7 @@ const ProjectCard = ({project, index = 0} : { project: Project, index?: number})
       <div className="flex flex-col justify-between">
         <div className="flex flex-col">
           <h4 className=" font-medium text-lg">{project.title}</h4>
-          <p className=" text-sm text-muted-foreground line-clamp-2">{project.description}</p>
+          <p className=" text-sm text-muted-foreground line-clamp-2 pr-16">{project.description}</p>
         </div>
         <div className="flex gap-2 items-center">
           <div className="flex gap-2">
