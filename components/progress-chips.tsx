@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 interface ProgressChipProps {
   name: ChipStatus;
@@ -31,11 +34,40 @@ const chipMap = {
       <span>In Progress</span>
     </div>
   ),
-  Shipped: () => (
-    <div className="flex items-center justify-center rounded-lg bg-green-200 px-2 py-1 text-xs font-medium text-green-800 ring-2 ring-inset ring-green-300 dark:bg-green-900 dark:text-green-300 dark:ring-green-700">
-      <span>Shipped</span>
-    </div>
-  ),
+  Shipped: () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    };
+
+    return (
+      <motion.div 
+        className="relative flex items-center justify-center rounded-lg bg-green-200 px-2 py-1 text-xs font-medium text-green-800 ring-2 ring-inset ring-green-300 dark:bg-green-900 dark:text-green-300 dark:ring-green-700 cursor-pointer overflow-hidden"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.2 }}
+      >
+        {isHovering && (
+          <motion.div
+            className="absolute inset-0 opacity-50"
+            style={{
+              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(74, 222, 128, 0.8) 0%, rgba(134, 239, 172, 0.3) 40%, transparent 70%)`,
+              pointerEvents: "none"
+            }}
+          />
+        )}
+        <span className="relative z-10">Shipped</span>
+      </motion.div>
+    );
+  },
   Planning: () => (
     <div className="flex items-center justify-center rounded-lg bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
       <span>Planning Phase</span>
