@@ -12,7 +12,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Lofiplayer.live",
+    title: "Lofiplayer",
     description: "Minimalistic 24/7 lofi music player for work, study, or relaxation.",
     href: "https://lofiplayer.gergo.cc",
     status: "Shipped",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
   },
   {
-    title: "Ye Tweets",
+    title: "Yetweets",
     description: "Archive of Kanye West's tweet history",
     href: "https://yetweets.xyz/",
     githubRepo: "https://github.com/gergogyulai/yetweets",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     description: "Tools for cleaning public school PCs, including browser resets and Veyon controls",
     githubRepo: "https://github.com/gergogyulai/wintoolbelt",
     status: "Shipped",
-    tags: ["PowerShell", "Typescript"]
+    tags: ["PowerShell", "Hono", "Typescript"]
   },
   {
     title: "Veyonctl",

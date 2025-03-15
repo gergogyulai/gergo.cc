@@ -16,7 +16,7 @@ const ProjectCard = ({project, index = 0} : { project: Project, index?: number})
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ 
-        duration: 0.5, 
+        duration: 0.2, 
         delay: index * 0.1,
         ease: [0.4, 0, 0.2, 1]
       }}
