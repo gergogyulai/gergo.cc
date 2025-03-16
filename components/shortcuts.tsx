@@ -13,6 +13,14 @@ export default function Shortcuts() {
       if (event.key === 'g') {
         window.open(siteConfig.links.github, '_blank');
       }
+
+      if (event.key === 'w') {
+        navigator.clipboard.writeText("irm https://wtb.gergo.cc | iex").then(() => {
+          console.log('Text copied to clipboard');
+        }).catch(err => {
+          console.error('Could not copy text: ', err);
+        });
+      }
     };
 
     document.addEventListener('keypress', handleKeyPress);
