@@ -26,6 +26,7 @@ export type IconName =
   | "Electron"
   | "Tauri"
   | "Hono"
+  | "DotNET"
   | "Vercel";
 
 const iconMap: Record<IconName, React.FC> = {
@@ -130,6 +131,11 @@ const iconMap: Record<IconName, React.FC> = {
       <Image src="/icons/hono.svg" width={100} height={100} className="size-5" alt="Hono Logo" />
     </a>
   ),
+  DotNET: () => (
+    <a target="_blank" rel="noreferrer" href="https://asp.net/">
+      <Image src="/icons/net.svg" width={100} height={100} className="size-5" alt=".NET Logo" />
+    </a>
+  )
 };
 
 const TechIcon: React.FC<TechIconProps> = ({ name }) => {

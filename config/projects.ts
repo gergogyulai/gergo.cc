@@ -49,6 +49,13 @@ export const projects: Project[] = [
     tags: ["PowerShell", "Hono", "Typescript"]
   },
   {
+    title: "Sonora",
+    description: "Self-hosted music streaming platform for personal music libraries.",
+    githubRepo: "https://github.com/gergogyulai/sonora",
+    status: "Planning",
+    tags: ["ReactNative", "DotNET"]
+  },
+  {
     title: "Veyonctl",
     description: "CLI tool for Veyon Service control on Windows",
     githubRepo: "https://github.com/gergogyulai/veyonctl",
