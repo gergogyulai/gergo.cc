@@ -34,6 +34,13 @@ export const projects: Project[] = [
     tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
   },
   {
+    title: "Sonora",
+    description: "A sleek, modern Jellyfin frontend built with Expo and React Native",
+    githubRepo: "https://github.com/gergogyulai/sonora",
+    status: "InProgress",
+    tags: ["ReactNative"]
+  },
+  {
     title: "Noisr",
     description: "Noise texture generator with custom size, density and color options",
     href: "https://noisr.gergo.cc",
@@ -47,13 +54,6 @@ export const projects: Project[] = [
     githubRepo: "https://github.com/gergogyulai/wintoolbelt",
     status: "Shipped",
     tags: ["PowerShell", "Hono", "Typescript"]
-  },
-  {
-    title: "Sonora",
-    description: "Self-hosted music streaming platform for personal music libraries.",
-    githubRepo: "https://github.com/gergogyulai/sonora",
-    status: "Planning",
-    tags: ["ReactNative", "DotNET"]
   },
   {
     title: "Veyonctl",
