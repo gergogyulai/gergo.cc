@@ -15,6 +15,7 @@ export type IconName =
   | "Swift"
   | "Astro"
   | "ReactNative"
+  | "Expo"
   | "React"
   | "Vite"
   | "C"
@@ -134,6 +135,12 @@ const iconMap: Record<IconName, React.FC> = {
   DotNET: () => (
     <a target="_blank" rel="noreferrer" href="https://asp.net/">
       <Image src="/icons/net.svg" width={100} height={100} className="size-5" alt=".NET Logo" />
+    </a>
+  ),
+  Expo: () => (
+    <a target="_blank" rel="noreferrer" href="https://expo.dev/">
+      <Image src="/icons/expo.svg" width={100} height={100} className="hidden size-5 dark:block invert" alt="Vercel Logo" />
+      <Image src="/icons/expo.svg" width={100} height={100} className="block size-5 dark:hidden" alt="Vercel Logo" />
     </a>
   )
 };

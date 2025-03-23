@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description: "A sleek, modern Jellyfin frontend built with Expo and React Native",
     githubRepo: "https://github.com/gergogyulai/sonora",
     status: "InProgress",
-    tags: ["ReactNative"]
+    tags: ["ReactNative", "Expo", "Typescript"]
   },
   {
     title: "Noisr",
