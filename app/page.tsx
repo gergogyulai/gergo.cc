@@ -107,9 +107,9 @@ export default function Homepage() {
       {/* Projects Section */}
       <motion.div className="space-y-6 max-w-4xl" variants={sectionContainer}>
         <motion.div className="space-y-1" variants={item}>
-          <h3 className="text-2xl font-bold">My Projects:</h3>
+          <h3 className="text-2xl font-bold">Some of my projects:</h3>
           <p className="text-muted-foreground">
-            Here are some of my projects I&apos;ve worked on.
+            Here are some of my more notable projects I&apos;ve worked on.
           </p>
         </motion.div>
         <motion.div className="flex flex-col gap-4">
