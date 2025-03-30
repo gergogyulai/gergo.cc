@@ -72,8 +72,8 @@ export default function Homepage() {
           className="text-muted-foreground line-clamp-4"
           variants={item}
         >
-          I&#39;m Gergo, a developer. I build fast, accessible, user-friendly
-          websites and apps. I build things for the web.
+          I&#39;m Gergo, a developer. I aspire to build fast, accessible, user-friendly
+          apps, mostly for the web.
         </motion.p>
       </motion.div>
 

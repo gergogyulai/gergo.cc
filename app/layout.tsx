@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { Analytics } from "@/components/analytics";
 import Shortcuts from "@/components/shortcuts";
 import { Toaster } from "@/components/ui/sonner";
+import DotArt from "@/components/dot-art";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -54,6 +55,7 @@ export default function RootLayout({
         >
           <div className="font-sans flex flex-col items-center min-h-screen py-16 md:px-10 gap-16 container">
             {children}
+            <DotArt />
           </div>
         </ThemeProvider>
       </body>

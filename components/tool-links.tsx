@@ -65,7 +65,7 @@ export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?:
   return (
     <Link href={tool.href} target="_blank" rel="noopener noreferrer">
       <motion.div 
-        className={`flex flex-col justify-center items-center ring-border ring-1 rounded-lg transition-colors relative shadow-md group select-none overflow-hidden ${containerSizeClasses[size]}`}
+        className={`flex flex-col justify-center items-center ring-border backdrop-blur-[1px] ring-1 rounded-lg transition-colors relative shadow-md group select-none overflow-hidden ${containerSizeClasses[size]}`}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}

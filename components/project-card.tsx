@@ -18,7 +18,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm py-4 px-4"
+      className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm backdrop-blur-[1px] py-4 px-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
