@@ -36,7 +36,7 @@ export const projects: Project[] = [
   },
   {
     title: "Magneto",
-    description: "Chrome extension to automatically grab magnet links. Privacy-focused, built with Svelte.",
+    description: "Chrome extension to automatically grab magnet links in the background.",
     githubRepo: "https://github.com/gergogyulai/magneto",
     status: "Shipped",
     tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
