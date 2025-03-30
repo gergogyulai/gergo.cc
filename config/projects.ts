@@ -57,6 +57,13 @@ export const projects: Project[] = [
     tags: ["PowerShell", "Hono", "Typescript"]
   },
   {
+    title: "Cloneall",
+    description: "CLI tool for cloning GitHub all repositories of a user or organization",
+    githubRepo: "https://github.com/gergogyulai/cloneall",
+    status: "Shipped",
+    tags: ["Golang"]
+  },
+  {
     title: "Veyonctl",
     description: "CLI tool for Veyon Service control on Windows",
     githubRepo: "https://github.com/gergogyulai/veyonctl",
