@@ -29,7 +29,7 @@ export const projects: Project[] = [
   },
   {
     title: "Sonora",
-    description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo and React Native",
+    description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
     githubRepo: "https://github.com/gergogyulai/sonora",
     status: "InProgress",
     tags: ["ReactNative", "Expo", "Typescript"]
