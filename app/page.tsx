@@ -100,7 +100,7 @@ export default function Homepage() {
         >
           {tools.map((tool, index) => (
             <motion.div key={tool.href} variants={item}>
-              <ToolLink tool={tool} />
+              <ToolLink tool={tool} size="normal" />
             </motion.div>
           ))}
         </motion.div>

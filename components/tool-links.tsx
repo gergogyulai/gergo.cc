@@ -12,7 +12,9 @@ export type Tool = {
   darkSrc?: string;
 };
 
-export default function ToolLink({ tool }: { tool: Tool }) {
+type Size = "small" | "normal" | "large";
+
+export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?: Size }) {
   const [isHovered, setIsHovered] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -48,10 +50,22 @@ export default function ToolLink({ tool }: { tool: Tool }) {
     setIsHovered(false);
   };
 
+  const containerSizeClasses = {
+    small: "h-16 w-16 sm:h-20 sm:w-20",
+    normal: "h-20 w-20 sm:h-24 sm:w-24",
+    large: "h-24 w-24 sm:h-28 sm:w-28"
+  };
+
+  const imageSizeClasses = {
+    small: "h-6 w-6 sm:h-10 sm:w-10",
+    normal: "h-8 w-8 sm:h-12 sm:w-12",
+    large: "h-10 w-10 sm:h-14 sm:w-14"
+  };
+
   return (
     <Link href={tool.href} target="_blank" rel="noopener noreferrer">
       <motion.div 
-        className="flex flex-col justify-center items-center ring-border ring-1 h-20 w-20 sm:h-24 sm:w-24 rounded-lg transition-colors relative shadow-md group select-none overflow-hidden"
+        className={`flex flex-col justify-center items-center ring-border ring-1 rounded-lg transition-colors relative shadow-md group select-none overflow-hidden ${containerSizeClasses[size]}`}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
@@ -83,14 +97,14 @@ export default function ToolLink({ tool }: { tool: Tool }) {
                 alt={tool.alt}
                 width={50}
                 height={50}
-                className="h-8 w-8 sm:h-12 sm:w-12 blur-md transition ease-in-out group-hover:blur-lg group-hover:saturate-125 dark:hidden"
+                className={`blur-md transition ease-in-out group-hover:blur-lg group-hover:saturate-125 dark:hidden ${imageSizeClasses[size]}`}
               />
               <Image
                 src={tool.darkSrc}
                 alt={tool.alt}
                 width={50}
                 height={50}
-                className="h-8 w-8 sm:h-12 sm:w-12 blur-md transition ease-in-out group-hover:blur-lg group-hover:saturate-125 hidden dark:block"
+                className={`blur-md transition ease-in-out group-hover:blur-lg group-hover:saturate-125 hidden dark:block ${imageSizeClasses[size]}`}
               />
             </motion.div>
             
@@ -110,14 +124,14 @@ export default function ToolLink({ tool }: { tool: Tool }) {
                 alt={tool.alt}
                 width={50}
                 height={50}
-                className="h-8 w-8 sm:h-12 sm:w-12 dark:hidden"
+                className={`dark:hidden ${imageSizeClasses[size]}`}
               />
               <Image
                 src={tool.darkSrc}
                 alt={tool.alt}
                 width={50}
                 height={50}
-                className="h-8 w-8 sm:h-12 sm:w-12 hidden dark:block"
+                className={`hidden dark:block ${imageSizeClasses[size]}`}
               />
             </motion.div>
           </>
@@ -139,7 +153,7 @@ export default function ToolLink({ tool }: { tool: Tool }) {
                 alt={tool.alt}
                 width={50}
                 height={50}
-                className="h-8 w-8 sm:h-12 sm:w-12 blur-md transition ease-in-out group-hover:blur-lg group-hover:saturate-125"
+                className={`blur-md transition ease-in-out group-hover:blur-lg group-hover:saturate-125 ${imageSizeClasses[size]}`}
               />
             </motion.div>
             
@@ -159,7 +173,7 @@ export default function ToolLink({ tool }: { tool: Tool }) {
                 alt={tool.alt}
                 width={50}
                 height={50}
-                className="h-8 w-8 sm:h-12 sm:w-12"
+                className={`${imageSizeClasses[size]}`}
               />
             </motion.div>
           </>

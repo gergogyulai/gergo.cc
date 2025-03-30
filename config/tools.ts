@@ -10,10 +10,9 @@ export const tools = [
     alt: "Svelte"
   },
   {
-    href: "https://astro.build",
-    src: "/icons/astro.svg",
-    darkSrc: "/icons/astro-dark.svg",
-    alt: "Astro",
+    href: "https://vite.dev",
+    src: "/icons/vite.svg",
+    alt: "Vite",
   },
   {
     href: "https://tailwindcss.com",
