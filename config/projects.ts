@@ -12,20 +12,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Lofiplayer",
-    description: "Minimalistic 24/7 lofi music player for work, study, or relaxation.",
-    href: "https://lofiplayer.gergo.cc",
-    status: "Shipped",
-    tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
-  },
-  {
-    title: "Magneto",
-    description: "Chrome extension to automatically grab magnet links. Privacy-focused, built with Svelte.",
-    githubRepo: "https://github.com/gergogyulai/magneto",
-    status: "Shipped",
-    tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
-  },
-  {
     title: "Yetweets",
     description: "Archive of Kanye West's tweet history",
     href: "https://yetweets.xyz/",
@@ -34,11 +20,26 @@ export const projects: Project[] = [
     tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
   },
   {
+    title: "Lofiplayer",
+    description: "Minimalistic 24/7 lofi music player for work, study, or relaxation.",
+    href: "https://lofiplayer.gergo.cc",
+    githubRepo: "https://github.com/gergogyulai/lofiplayer",
+    status: "Shipped",
+    tags: ["React", "TanstackRouter", "Tailwind", "Vite", "Typescript"]
+  },
+  {
     title: "Sonora",
     description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo and React Native",
     githubRepo: "https://github.com/gergogyulai/sonora",
     status: "InProgress",
     tags: ["ReactNative", "Expo", "Typescript"]
+  },
+  {
+    title: "Magneto",
+    description: "Chrome extension to automatically grab magnet links. Privacy-focused, built with Svelte.",
+    githubRepo: "https://github.com/gergogyulai/magneto",
+    status: "Shipped",
+    tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
   },
   {
     title: "Noisr",

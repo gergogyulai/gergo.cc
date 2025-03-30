@@ -28,6 +28,12 @@ export type IconName =
   | "Tauri"
   | "Hono"
   | "DotNET"
+  | "TanstackStart"
+  | "TanstackRouter"
+  | "TanstackQuery"
+  | "TanstackTable"
+  | "TanstackVirtual"
+  | "TanstackForm"
   | "Vercel";
 
 const iconMap: Record<IconName, React.FC> = {
@@ -141,6 +147,36 @@ const iconMap: Record<IconName, React.FC> = {
     <a target="_blank" rel="noreferrer" href="https://expo.dev/">
       <Image src="/icons/expo.svg" width={100} height={100} className="hidden size-5 dark:block invert" alt="Vercel Logo" />
       <Image src="/icons/expo.svg" width={100} height={100} className="block size-5 dark:hidden" alt="Vercel Logo" />
+    </a>
+  ),
+  TanstackStart: () => (
+    <a target="_blank" rel="noreferrer" href="https://tanstack.com/start/latest">
+      <Image src="/icons/tanstack.png" width={100} height={100} className="size-5" alt="Tanstack Start Logo" />
+    </a>
+  ),
+  TanstackRouter: () => (
+    <a target="_blank" rel="noreferrer" href="https://tanstack.com/router/v1">
+      <Image src="/icons/tanstack.png" width={100} height={100} className="size-5" alt="Tanstack Router Logo" />
+    </a>
+  ),
+  TanstackQuery: () => (
+    <a target="_blank" rel="noreferrer" href="https://tanstack.com/query/v4">
+      <Image src="/icons/tanstack.png" width={100} height={100} className="size-5" alt="Tanstack Query Logo" />
+    </a>
+  ),
+  TanstackTable: () => (
+    <a target="_blank" rel="noreferrer" href="https://tanstack.com/table/v8">
+      <Image src="/icons/tanstack.png" width={100} height={100} className="size-5" alt="Tanstack Table Logo" />
+    </a>
+  ),
+  TanstackVirtual: () => (
+    <a target="_blank" rel="noreferrer" href="https://tanstack.com/virtual/v4">
+      <Image src="/icons/tanstack.png" width={100} height={100} className="size-5" alt="Tanstack Virtual Logo" />
+    </a>
+  ),
+  TanstackForm: () => (
+    <a target="_blank" rel="noreferrer" href="https://tanstack.com/form/v4">
+      <Image src="/icons/tanstack.png" width={100} height={100} className="size-5" alt="Tanstack Form Logo" />
     </a>
   )
 };
