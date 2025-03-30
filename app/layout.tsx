@@ -1,20 +1,22 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import localFont from "next/font/local";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@/components/analytics";
 import Shortcuts from "@/components/shortcuts";
 import { Toaster } from "@/components/ui/sonner";
 import DotArt from "@/components/dot-art";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+
+const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
+
 
 export const metadata: Metadata = {
   title: "Gergo's Portfolio",
