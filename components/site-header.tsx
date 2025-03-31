@@ -8,7 +8,7 @@ export function SiteHeader() {
   return (
     <nav className="flex items-center gap-2">
       <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-        <Button variant="outline" >
+        <Button variant="outline" className="backdrop-blur-[1px]">
           <div className="hidden md:flex items-center gap-2">
             <Icons.gitHub className="size-5" />
             <span className="font-mono bg-muted px-1.5 py-0.5 rounded-[7px] leading-none border border-primary/10 flex items-center justify-center">G</span>
