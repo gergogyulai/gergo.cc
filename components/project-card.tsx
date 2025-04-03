@@ -18,7 +18,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm backdrop-blur-[1px] py-4 px-4"
+      className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm backdrop-blur-[2px] py-4 px-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -26,7 +26,9 @@ const ProjectCard = ({
         delay: index * 0.1,
         ease: [0.4, 0, 0.2, 1],
       }}
-      whileHover={{ scale: 1.02 }}
+      whileHover={{ 
+        scale: 1.02
+      }}
     >
       <div className="flex flex-col justify-between">
         <div className="flex flex-col">

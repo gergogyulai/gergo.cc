@@ -3,12 +3,11 @@
 import NameCard from "@/components/namecard";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import { tools } from "@/config/tools";
 import { projects } from "@/config/projects";
 import ProjectCard from "@/components/project-card";
-import ToolLink from "@/components/tool-links";
+import ToolLink, { Tool } from "@/components/tool-links";
 import { motion } from "framer-motion";
 
 export const dynamic = "force-static" 
@@ -41,7 +40,7 @@ export default function Homepage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.03,
-        delayChildren: 0.03,
+        delayChildren: 0.02,
       },
     },
   };
@@ -57,7 +56,7 @@ export default function Homepage() {
 
   return (
     <motion.section
-      className="flex flex-col gap-16"
+      className="flex flex-col gap-16 max-w-4xl mx-auto"
       variants={pageContainer}
       initial="hidden"
       animate="show"
@@ -78,15 +77,15 @@ export default function Homepage() {
       </motion.div>
 
       {/* Stack Section */}
-      <motion.div className="space-y-4 max-w-4xl" variants={sectionContainer}>
+      <motion.div className="space-y-4" variants={sectionContainer}>
         <motion.div className="space-y-1" variants={item}>
-          <h3 className="text-2xl font-bold">My Stack:</h3>
+          <h3 className="text-2xl font-bold">My ever-evolving stack:</h3>
           <div className="space-y-2">
-            <p className="text-muted-foreground">
+            {/* <p className="text-muted-foreground">
               {
                 "These are the technologies and tools I use to craft websites and applications. I prioritize minimalism and efficiency, keeping my stack lean and effective."
               }
-            </p>
+            </p> */}
             <p className="text-muted-foreground">
               {
                 "Always exploring cutting-edge technologies, so my stack evolves constantly as I refine my workflow and adopt new tools."
@@ -95,12 +94,22 @@ export default function Homepage() {
           </div>
         </motion.div>
         <motion.div
-          className="flex justify-center gap-4 flex-wrap lg:flex-nowrap"
+          className="relative h-[200px] sm:h-[300px] md:h-[400px] w-full"
           variants={toolsContainer}
         >
-          {tools.map((tool, index) => (
-            <motion.div key={tool.href} variants={item}>
-              <ToolLink tool={tool} size="normal" />
+          {tools.map((tool) => (
+            <motion.div 
+              key={tool.href} 
+              variants={item}
+              className="absolute transform"
+              style={{
+                left: `${tool.position.x+2}%`,
+                top: `${tool.position.y}%`,
+              }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <ToolLink tool={tool as Tool} size={tool.size as "sm" | "md" | "lg"} />
             </motion.div>
           ))}
         </motion.div>

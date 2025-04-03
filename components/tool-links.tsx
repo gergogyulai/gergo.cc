@@ -10,11 +10,14 @@ export type Tool = {
   src: string;
   alt: string;
   darkSrc?: string;
+  position?: { x: number, y: number };
+  animationDelay?: number;
+  size?: Size;
 };
 
-type Size = "small" | "normal" | "large";
+type Size = "sm" | "md" | "lg";
 
-export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?: Size }) {
+export default function ToolLink({ tool, size = "md" }: { tool: Tool, size?: Size }) {
   const [isHovered, setIsHovered] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -36,6 +39,12 @@ export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?:
   const xForeground = useTransform(xSpring, v => v * 0.15);
   const yForeground = useTransform(ySpring, v => v * 0.15);
 
+  // Add spring animations for scale effects
+  const shadowScale = useMotionValue(1.03);
+  const shadowScaleSpring = useSpring(shadowScale, { damping: 70, stiffness: 300 });
+  const darkShadowScale = useMotionValue(1.08);
+  const darkShadowScaleSpring = useSpring(darkShadowScale, { damping: 70, stiffness: 300 });
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     // Calculate mouse position relative to the center of the card
@@ -44,40 +53,46 @@ export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?:
   };
 
   const handleMouseLeave = () => {
-    // Reset position on mouse leave
     x.set(0);
     y.set(0);
     setIsHovered(false);
+    shadowScale.set(1.03);
+    darkShadowScale.set(1.08);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    shadowScale.set(1.08);
+    darkShadowScale.set(1.1);
   };
 
   const containerSizeClasses = {
-    small: "h-16 w-16 sm:h-20 sm:w-20",
-    normal: "h-20 w-20 sm:h-24 sm:w-24",
-    large: "h-24 w-24 sm:h-28 sm:w-28"
+    sm: "h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20",
+    md: "h-14 w-14 sm:h-18 sm:w-18 md:h-24 md:w-24",
+    lg: "h-16 w-16 sm:h-20 sm:w-20 md:h-28 md:w-28",
   };
-
+  
   const imageSizeClasses = {
-    small: "h-6 w-6 sm:h-10 sm:w-10",
-    normal: "h-8 w-8 sm:h-12 sm:w-12",
-    large: "h-10 w-10 sm:h-14 sm:w-14"
+    sm: "h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10",
+    md: "h-7 w-7 sm:h-9 sm:w-9 md:h-12 md:w-12",
+    lg: "h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14",
   };
 
   return (
     <Link href={tool.href} target="_blank" rel="noopener noreferrer">
       <motion.div 
-        className={`flex flex-col justify-center items-center ring-border backdrop-blur-[1px] ring-1 rounded-lg transition-colors relative shadow-md group select-none overflow-hidden ${containerSizeClasses[size]}`}
+        className={`flex flex-col justify-center items-center ring-border backdrop-blur-[2px] ring-1 rounded-lg transition-colors relative shadow-md group select-none overflow-hidden ${containerSizeClasses[size]}`}
         onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovered(true)}
+        onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{
           rotateX,
           rotateY,
           z: 100,
         }}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.6, delay: (tool.animationDelay ?? 0) + 0.05 }}
       >
         {tool.darkSrc ? (
           <>
@@ -85,10 +100,9 @@ export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?:
             <motion.div 
               className="absolute inset-0 flex justify-center items-center"
               style={{ 
-                scale: isHovered ? 1.08 : 1.03, // Reduced from 1.15/1.05 to 1.08/1.03
+                scale: shadowScaleSpring,
                 x: xShadow,
                 y: yShadow,
-                transition: "scale 0.3s ease-out", // Slowed down for more subtlety
                 zIndex: 1
               }}
             >
@@ -115,7 +129,6 @@ export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?:
                 x: xForeground,
                 y: yForeground,
                 scale: 1,
-                transition: "all 0.2s ease-out", // Slowed down slightly
                 zIndex: 2
               }}
             >
@@ -141,10 +154,9 @@ export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?:
             <motion.div 
               className="absolute inset-0 flex justify-center items-center"
               style={{ 
-                scale: isHovered ? 1.08 : 1.03,
+                scale: darkShadowScaleSpring,
                 x: xShadow,
                 y: yShadow,
-                transition: "scale 0.3s ease-out",
                 zIndex: 1
               }}
             >
@@ -164,7 +176,6 @@ export default function ToolLink({ tool, size = "normal" }: { tool: Tool, size?:
                 x: xForeground,
                 y: yForeground,
                 scale: 1,
-                transition: "all 0.2s ease-out",
                 zIndex: 2
               }}
             >
