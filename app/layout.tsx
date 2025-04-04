@@ -57,7 +57,7 @@ export default function RootLayout({
         >
           <div className="font-sans flex flex-col items-center min-h-screen py-16 md:px-10 gap-16 container">
             {children}
-            <DotArt />
+            {/* <DotArt /> */}
           </div>
         </ThemeProvider>
       </body>
