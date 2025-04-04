@@ -46,7 +46,7 @@ export const tools = [
   },
   {
     ...toolsRegistry.nextjs,
-    position: { x: 15, y: 47 },
+    position: { x: 15, y: 45 },
     size: "lg",
     animationDelay: 0.7,
   },
