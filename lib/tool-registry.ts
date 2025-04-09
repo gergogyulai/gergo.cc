@@ -154,4 +154,9 @@ export const toolsRegistry: Record<
     src: "/icons/zustand.svg",
     alt: "Zustand",
   },
+  docker: {
+    href: "https://www.docker.com",
+    src: "/icons/docker.svg",
+    alt: "Docker",
+  },
 };

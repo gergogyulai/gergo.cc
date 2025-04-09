@@ -42,6 +42,13 @@ export const projects: Project[] = [
     tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
   },
   {
+    title: "Axolotl",
+    description: "Self-hosted Minecraft server manager.",
+    githubRepo: "https://github.com/gergogyulai/axolotl",
+    status: "InProgress",
+    tags: ["Golang", "Docker"]
+  },
+  {
     title: "Noisr",
     description: "Noise texture generator with custom size, density and color options",
     href: "https://noisr.gergo.cc",

@@ -28,6 +28,7 @@ export type IconName =
   | "Tauri"
   | "Hono"
   | "DotNET"
+  | "Docker"
   | "TanstackStart"
   | "TanstackRouter"
   | "TanstackQuery"
@@ -178,7 +179,12 @@ const iconMap: Record<IconName, React.FC> = {
     <a target="_blank" rel="noreferrer" href="https://tanstack.com/form/v4">
       <Image src="/icons/tanstack.png" width={100} height={100} className="size-5" alt="Tanstack Form Logo" />
     </a>
-  )
+  ),
+  Docker: () => (
+    <a target="_blank" rel="noreferrer" href="https://www.docker.com/">
+      <Image src="/icons/docker.svg" width={100} height={100} className="size-5" alt="Docker Logo" />
+    </a>
+  ),
 };
 
 const TechIcon: React.FC<TechIconProps> = ({ name }) => {
