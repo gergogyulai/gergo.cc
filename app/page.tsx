@@ -10,7 +10,7 @@ import ProjectCard from "@/components/project-card";
 import ToolLink, { Tool } from "@/components/tool-links";
 import { motion } from "framer-motion";
 
-export const dynamic = "force-static" 
+export const dynamic = "force-static";
 
 export default function Homepage() {
   const pageContainer = {
