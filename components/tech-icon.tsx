@@ -105,7 +105,7 @@ const iconMap: Record<IconName, React.FC> = {
   ),
   Golang: () => (
     <a target="_blank" rel="noreferrer" href="https://golang.org/">
-      <Image src="/icons/golang.svg" width={100} height={100} className="size-5" alt="Golang Logo" />
+      <Image src="/icons/golang.svg" width={200} height={200} className=" w-8 h-5" alt="Golang Logo" />
     </a>
   ),
   Vercel: () => (
