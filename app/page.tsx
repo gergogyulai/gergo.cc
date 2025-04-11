@@ -88,13 +88,13 @@ export default function Homepage() {
           </p>
         </motion.div>
         <motion.div className="flex flex-col gap-4">
-          {projects.slice(0, 6).map((project, index) => (
+          {projects.slice(0, 5).map((project, index) => (
             <motion.div key={project.title} variants={item} custom={index}>
               <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </motion.div>
-        {projects.length > 6 && (
+        {projects.length > 5 && (
           <motion.div
             className="flex w-full justify-center items-center"
             variants={item}
