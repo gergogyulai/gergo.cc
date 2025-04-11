@@ -9,6 +9,7 @@ import { projects } from "@/config/projects";
 import ProjectCard from "@/components/project-card";
 import ToolLink, { Tool } from "@/components/tool-links";
 import { motion } from "framer-motion";
+import { GalleryVerticalEnd } from "lucide-react";
 
 export const dynamic = "force-static";
 
@@ -71,8 +72,8 @@ export default function Homepage() {
           className="text-muted-foreground line-clamp-4"
           variants={item}
         >
-          I&#39;m Gergo, a developer. I aspire to build fast, accessible, user-friendly
-          apps, mostly for the web.
+          I&#39;m Gergo, a developer. I aspire to build fast, accessible,
+          user-friendly apps, mostly for the web.
         </motion.p>
       </motion.div>
 
@@ -81,11 +82,6 @@ export default function Homepage() {
         <motion.div className="space-y-1" variants={item}>
           <h3 className="text-2xl font-bold">My ever-evolving stack:</h3>
           <div className="space-y-2">
-            {/* <p className="text-muted-foreground">
-              {
-                "These are the technologies and tools I use to craft websites and applications. I prioritize minimalism and efficiency, keeping my stack lean and effective."
-              }
-            </p> */}
             <p className="text-muted-foreground">
               {
                 "Always exploring cutting-edge technologies, so my stack evolves constantly as I refine my workflow and adopt new tools."
@@ -98,18 +94,22 @@ export default function Homepage() {
           variants={toolsContainer}
         >
           {tools.map((tool) => (
-            <motion.div 
-              key={tool.href} 
+            <motion.div
+              id={`tool-${tool.id}`}
+              key={tool.id}
               variants={item}
               className="absolute transform"
               style={{
-                left: `${tool.position.x+2}%`,
+                left: `${tool.position.x + 2}%`,
                 top: `${tool.position.y}%`,
               }}
               transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
             >
-              <ToolLink tool={tool as Tool} size={tool.size as "sm" | "md" | "lg"} />
+              <ToolLink
+                tool={tool as Tool}
+                size={tool.size as "sm" | "md" | "lg"}
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -124,20 +124,25 @@ export default function Homepage() {
           </p>
         </motion.div>
         <motion.div className="flex flex-col gap-4">
-          {projects.map((project, index) => (
+          {projects.slice(0, 6).map((project, index) => (
             <motion.div key={project.title} variants={item} custom={index}>
-              <ProjectCard project={project} index={0} />
+              <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </motion.div>
-        <motion.div
-          className="flex w-full justify-center items-center"
-          variants={item}
-        >
-          <Link href="https://github.com/gergogyulai" target="_blank">
-            <Button variant={"ghost"}>More on GitHub</Button>
+        {projects.length > 6 && (
+          <motion.div
+              className="flex w-full justify-center items-center"
+              variants={item}
+            >
+          <Link href={"/projects"}>
+              <Button variant={"ghost"} className="flex gap-2">
+                <GalleryVerticalEnd className="size-4" />
+                View All Projects
+              </Button>
           </Link>
-        </motion.div>
+            </motion.div>
+        )}
       </motion.div>
     </motion.section>
   );

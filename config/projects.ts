@@ -6,6 +6,7 @@ export type Project = {
   description: string;
   href?: string;
   githubRepo?: string;
+  highlighted?: boolean;
   status?: ChipStatus;
   tags: IconName[];
 }
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     href: "https://yetweets.xyz/",
     githubRepo: "https://github.com/gergogyulai/yetweets",
     status: "InProgress",
+    highlighted: true,
     tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
   },
   {
@@ -31,7 +33,7 @@ export const projects: Project[] = [
     title: "Sonora",
     description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
     githubRepo: "https://github.com/gergogyulai/sonora",
-    status: "InProgress",
+    status: "OnHold",
     tags: ["ReactNative", "Expo", "Typescript"]
   },
   {
@@ -43,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     title: "Axolotl",
-    description: "Self-hosted Minecraft server manager.",
+    description: "Advanced and highly configurable Minecraft server manager written in Go.",
     githubRepo: "https://github.com/gergogyulai/axolotl",
     status: "InProgress",
     tags: ["Golang", "Docker"]

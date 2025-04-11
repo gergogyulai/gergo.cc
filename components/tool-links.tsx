@@ -9,6 +9,7 @@ export type Tool = {
   href: string;
   src: string;
   alt: string;
+  id: string;
   darkSrc?: string;
   position?: { x: number, y: number };
   animationDelay?: number;

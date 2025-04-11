@@ -8,17 +8,16 @@ interface ProgressChipProps {
 }
 
 export type ChipStatus =
-  | "Archived"
-  | "Unknown"
-  | "InProgress"
   | "Shipped"
-  | "Planning"
-  | "Abandoned"
-  | "Repo"
+  | "InProgress"
   | "OnHold"
-  | "Discontinued";
+  | "Planning"
+  | "Archived"
+  | "Abandoned"
+  | "Unknown"
+  | "Repo"
 
-const chipMap = {
+  const chipMap = {
   Archived: () => (
     <div className="flex items-center justify-center rounded-lg bg-neutral-300 px-2 py-1 text-xs font-medium text-neutral-800 dark:bg-neutral-800 dark:text-neutral-300">
       <span>Archived</span>
@@ -86,11 +85,6 @@ const chipMap = {
   OnHold: () => (
     <div className="flex items-center justify-center rounded-lg bg-amber-100 px-2 py-1 text-xs font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-300">
       <span>On Hold</span>
-    </div>
-  ),
-  Discontinued: () => (
-    <div className="flex items-center justify-center rounded-lg bg-rose-100 px-2 py-1 text-xs font-medium text-rose-800 dark:bg-rose-900 dark:text-rose-300">
-      <span>Discontinued</span>
     </div>
   ),
 };

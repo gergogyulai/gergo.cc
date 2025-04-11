@@ -8,6 +8,7 @@ import TechIcon from "@/components/tech-icon";
 import ProgressChip from "@/components/progress-chips";
 import { type Project } from "@/config/projects";
 import { motion } from "framer-motion";
+import { HighlightedBadge } from "./highlighted-badge";
 
 const ProjectCard = ({
   project,
@@ -26,8 +27,8 @@ const ProjectCard = ({
         delay: index * 0.1,
         ease: [0.4, 0, 0.2, 1],
       }}
-      whileHover={{ 
-        scale: 1.02
+      whileHover={{
+        scale: 1.02,
       }}
     >
       <div className="flex flex-col justify-between">
@@ -49,6 +50,7 @@ const ProjectCard = ({
             {project.tags &&
               project.tags.map((tag) => <TechIcon name={tag} key={tag} />)}
           </div>
+          {/* {project.highlighted && <HighlightedBadge />} */}
           <div>{project.status && <ProgressChip name={project.status} />}</div>
         </div>
       </div>
