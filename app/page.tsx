@@ -66,7 +66,7 @@ export default function Homepage() {
               className="absolute transform"
               style={{
                 left: `${tool.position.x + 2}%`,
-                top: `${tool.position.y}%`,
+                top: `${tool.position.y - 4}%`,
               }}
               transition={{ duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
