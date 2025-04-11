@@ -10,51 +10,10 @@ import ProjectCard from "@/components/project-card";
 import ToolLink, { Tool } from "@/components/tool-links";
 import { motion } from "framer-motion";
 import { GalleryVerticalEnd } from "lucide-react";
-
+import { item, pageContainer, sectionContainer, toolsContainer } from "@/lib/motion";
 export const dynamic = "force-static";
 
 export default function Homepage() {
-  const pageContainer = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.07,
-      },
-    },
-  };
-
-  const sectionContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.03,
-      },
-    },
-  };
-
-  const toolsContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.03,
-        delayChildren: 0.02,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] },
-    },
-  };
-
   return (
     <motion.section
       className="flex flex-col gap-16 max-w-4xl mx-auto"
