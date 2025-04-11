@@ -3,11 +3,12 @@
 import React from "react";
 import { siteConfig } from "@/config/site";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 
 export default function Shortcuts() {
   const router = useRouter();
+  const pathname = usePathname();
   const { setTheme, theme } = useTheme();
   
   React.useEffect(() => {
@@ -29,6 +30,10 @@ export default function Shortcuts() {
 
       if (event.key === "t") {
         setTheme(theme === "light" ? "dark" : "light");
+      }
+
+      if (event.key === "b" && pathname === "/projects") {
+        router.push("/");
       }
 
       if (event.key === "h") {
@@ -55,7 +60,7 @@ export default function Shortcuts() {
 
     document.addEventListener("keypress", handleKeyPress);
     return () => document.removeEventListener("keypress", handleKeyPress);
-  }, [router, setTheme, theme]);
+  }, [router, setTheme, theme, pathname]);
 
   return null;
 }
