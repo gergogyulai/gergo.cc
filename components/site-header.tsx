@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
+import { KeyboardShortcut } from "./keyboard-shortcut"
 
 export function SiteHeader() {
   return (
@@ -11,7 +12,7 @@ export function SiteHeader() {
         <Button variant="outline" className="backdrop-blur-[1px]">
           <div className="hidden md:flex items-center gap-2">
             <Icons.gitHub className="size-5" />
-            <span className="font-mono bg-muted px-1.5 py-0.5 rounded-[7px] leading-none border border-primary/10 flex items-center justify-center">G</span>
+            <KeyboardShortcut shortcut="G" />
           </div>
           <Icons.gitHub className="size-5 block md:hidden" />
           <span className="sr-only">GitHub</span>

@@ -3,8 +3,13 @@
 import React from "react";
 import { siteConfig } from "@/config/site";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 
 export default function Shortcuts() {
+  const router = useRouter();
+  const { setTheme, theme } = useTheme();
+  
   React.useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (
@@ -18,11 +23,22 @@ export default function Shortcuts() {
         window.open(siteConfig.links.github, "_blank");
       }
 
+      if (event.key === "p") {
+        router.push("/projects");
+      }
+
+      if (event.key === "t") {
+        setTheme(theme === "light" ? "dark" : "light");
+      }
+
+      if (event.key === "h") {
+        router.push("/");
+      }
+
       if (event.key === "w") {
         navigator.clipboard
           .writeText("irm https://wtb.gergo.cc | iex")
           .then(() => {
-            console.log("Text copied to clipboard");
             toast.success("Copied to clipboard", {
               description: "WTB Command has been copied to your clipboard",
               position: "bottom-right",
@@ -30,7 +46,6 @@ export default function Shortcuts() {
             });
           })
           .catch((err) => {
-            console.error("Could not copy text: ", err);
             toast.error("Failed to copy", {
               description: "Please try again",
             });
@@ -40,7 +55,7 @@ export default function Shortcuts() {
 
     document.addEventListener("keypress", handleKeyPress);
     return () => document.removeEventListener("keypress", handleKeyPress);
-  }, []);
+  }, [router, setTheme, theme]);
 
   return null;
 }

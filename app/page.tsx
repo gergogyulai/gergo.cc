@@ -10,7 +10,15 @@ import ProjectCard from "@/components/project-card";
 import ToolLink, { Tool } from "@/components/tool-links";
 import { motion } from "framer-motion";
 import { GalleryVerticalEnd } from "lucide-react";
-import { item, pageContainer, sectionContainer, toolsContainer } from "@/lib/motion";
+import {
+  item,
+  pageContainer,
+  sectionContainer,
+  toolsContainer,
+} from "@/lib/motion";
+import { Icons } from "@/components/icons";
+import { KeyboardShortcut } from "@/components/keyboard-shortcut";
+
 export const dynamic = "force-static";
 
 export default function Homepage() {
@@ -88,16 +96,17 @@ export default function Homepage() {
         </motion.div>
         {projects.length > 6 && (
           <motion.div
-              className="flex w-full justify-center items-center"
-              variants={item}
-            >
-          <Link href={"/projects"}>
+            className="flex w-full justify-center items-center"
+            variants={item}
+          >
+            <Link href={"/projects"}>
               <Button variant={"ghost"} className="flex gap-2">
                 <GalleryVerticalEnd className="size-4" />
                 View All Projects
+                <KeyboardShortcut shortcut="P" />
               </Button>
-          </Link>
-            </motion.div>
+            </Link>
+          </motion.div>
         )}
       </motion.div>
     </motion.section>
