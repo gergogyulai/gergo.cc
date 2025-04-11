@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import TechIcon from "@/components/tech-icon";
 import ProgressChip from "@/components/progress-chips";
-import { type Project } from "@/config/projects";
+import { type Project } from "@/lib/projects";
 import { motion } from "framer-motion";
 import { HighlightedBadge } from "./highlighted-badge";
 import { cn } from "@/lib/utils";

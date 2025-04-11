@@ -5,7 +5,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@/components/analytics";
 import Shortcuts from "@/components/shortcuts";
 import { Toaster } from "@/components/ui/sonner";
-import DotArt from "@/components/dot-art";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +16,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
   title: "Gergo's Portfolio",
   description: "Yet another portfolio site, but this one is mine.",
@@ -28,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og.png",
         width: 1380,
         height: 934,
         alt: "Gergo's Portfolio",
@@ -42,7 +40,6 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <link rel="icon" href="favicon.png" type="image/x-icon" />
       <head>
         <Analytics />
       </head>

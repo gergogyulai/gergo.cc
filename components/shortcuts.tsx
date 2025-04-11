@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/lib/site";
 import { toast } from "sonner";
 import { useRouter, usePathname } from "next/navigation";
 import { useTheme } from "next-themes";

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { siteConfig } from "@/config/site"
+import { siteConfig } from "@/lib/site"
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Button } from "@/components/ui/button"
