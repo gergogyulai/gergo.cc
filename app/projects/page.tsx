@@ -4,6 +4,8 @@ import ProjectCard from "@/components/project-card";
 import { projects } from "@/config/projects";
 import { motion } from "framer-motion";
 
+export const dynamic = "force-static";
+
 export default function ProjectsPage() {
   const sectionContainer = {
     hidden: { opacity: 0 },
