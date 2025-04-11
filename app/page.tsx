@@ -62,7 +62,6 @@ export default function Homepage() {
       initial="hidden"
       animate="show"
     >
-      {/* Header Section */}
       <motion.div className="space-y-4 max-w-4xl" variants={sectionContainer}>
         <motion.div className="flex justify-between" variants={item}>
           <NameCard />
@@ -77,7 +76,6 @@ export default function Homepage() {
         </motion.p>
       </motion.div>
 
-      {/* Stack Section */}
       <motion.div className="space-y-4" variants={sectionContainer}>
         <motion.div className="space-y-1" variants={item}>
           <h3 className="text-2xl font-bold">My ever-evolving stack:</h3>
@@ -115,7 +113,6 @@ export default function Homepage() {
         </motion.div>
       </motion.div>
 
-      {/* Projects Section */}
       <motion.div className="space-y-6 max-w-4xl" variants={sectionContainer}>
         <motion.div className="space-y-1" variants={item}>
           <h3 className="text-2xl font-bold">Some of my projects:</h3>
