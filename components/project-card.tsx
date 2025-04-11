@@ -9,17 +9,19 @@ import ProgressChip from "@/components/progress-chips";
 import { type Project } from "@/config/projects";
 import { motion } from "framer-motion";
 import { HighlightedBadge } from "./highlighted-badge";
-
+import { cn } from "@/lib/utils";
 const ProjectCard = ({
   project,
   index = 0,
+  className,
 }: {
   project: Project;
   index?: number;
+  className?: string;
 }) => {
   return (
     <motion.div
-      className="flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm backdrop-blur-[2px] py-4 px-4"
+      className={cn("flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-sm backdrop-blur-[2px] py-4 px-4", className)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
