@@ -47,7 +47,7 @@ export type ChipStatus =
 
     return (
       <motion.div 
-        className="relative flex items-center justify-center rounded-lg bg-green-200 px-2 py-1 text-xs font-medium text-green-800 ring-2 ring-inset ring-green-300 dark:bg-green-900 dark:text-green-300 dark:ring-green-700 cursor-pointer overflow-hidden"
+        className="relative flex items-center justify-center rounded-lg bg-green-200 px-2 py-1 text-xs font-medium text-green-800 ring-2 ring-inset ring-green-300 dark:bg-green-900 dark:text-green-300 dark:ring-green-700 overflow-hidden"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}

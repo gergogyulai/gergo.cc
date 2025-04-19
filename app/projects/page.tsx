@@ -3,7 +3,6 @@
 import { KeyboardShortcut } from "@/components/keyboard-shortcut";
 import ProjectCard from "@/components/project-card";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { projects } from "@/lib/projects";
 import { siteConfig } from "@/lib/site";
 import { item, sectionContainer } from "@/lib/motion";
@@ -32,6 +31,7 @@ export default function ProjectsPage() {
           <Link
             href={siteConfig.links.github + "?tab=repositories"}
             target="_blank"
+            className="hidden lg:block"
           >
             <Button variant={"outline"} className="flex items-center gap-2">
               View all on GitHub
@@ -50,6 +50,7 @@ export default function ProjectsPage() {
             key="placeholder"
             variants={item}
             custom={projects.length}
+            className="hidden lg:block"
           >
             <ProjectCard
               project={{
@@ -62,6 +63,17 @@ export default function ProjectsPage() {
             />
           </motion.div>
         )}
+        <div className="flex items-center gap-2 w-full justify-center">
+          <Link
+            href={siteConfig.links.github + "?tab=repositories"}
+            target="_blank"
+            className="block lg:hidden"
+          >
+            <Button variant={"ghost"} className="flex items-center gap-2">
+              View all on GitHub
+            </Button>
+          </Link>
+        </div>
       </div>
     </motion.div>
   );

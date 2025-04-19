@@ -16,7 +16,6 @@ import {
   sectionContainer,
   toolsContainer,
 } from "@/lib/motion";
-import { Icons } from "@/components/icons";
 import { KeyboardShortcut } from "@/components/keyboard-shortcut";
 
 export const dynamic = "force-static";
