@@ -45,13 +45,6 @@ export const projects: Project[] = [
     tags: ["ReactNative", "Expo", "Typescript"]
   },
   {
-    title: "Axolotl",
-    description: "Advanced and highly configurable Minecraft server manager written in Go.",
-    githubRepo: "https://github.com/gergogyulai/axolotl",
-    status: "InProgress",
-    tags: ["Golang", "Docker"]
-  },
-  {
     title: "Noisr",
     description: "Noise texture generator with custom size, density and color options",
     href: "https://noisr.gergo.cc",
