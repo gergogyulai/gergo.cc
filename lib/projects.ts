@@ -30,18 +30,19 @@ export const projects: Project[] = [
     tags: ["React", "TanstackRouter", "Tailwind", "Vite", "Typescript"]
   },
   {
+    title: "Magneto",
+    description: "Chrome extension to automatically grab magnet links in the background.",
+    href: "https://magneto.crackhead.engineering/",
+    githubRepo: "https://github.com/gergogyulai/magneto",
+    status: "Shipped",
+    tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
+  },
+  {
     title: "Sonora",
     description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
     githubRepo: "https://github.com/gergogyulai/sonora",
     status: "OnHold",
     tags: ["ReactNative", "Expo", "Typescript"]
-  },
-  {
-    title: "Magneto",
-    description: "Chrome extension to automatically grab magnet links in the background.",
-    githubRepo: "https://github.com/gergogyulai/magneto",
-    status: "Shipped",
-    tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
   },
   {
     title: "Axolotl",
