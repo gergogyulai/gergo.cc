@@ -24,7 +24,7 @@ export const projects: Project[] = [
   {
     title: "Lofiplayer",
     description: "Minimalistic 24/7 lofi music player for work, study, or relaxation.",
-    href: "https://lofiplayer.gergo.cc",
+    href: "https://lofiplayer.app",
     githubRepo: "https://github.com/gergogyulai/lofiplayer",
     status: "Shipped",
     tags: ["React", "TanstackRouter", "Tailwind", "Vite", "Typescript"]
