@@ -21,7 +21,10 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      className={cn("flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-xs backdrop-blur-[2px] py-4 px-4", className)}
+      className={cn(
+        "flex flex-row justify-between ring-1 ring-border h-32 w-full rounded-lg shadow-xs backdrop-blur-[2px] py-4 px-4",
+        className
+      )}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -34,15 +37,31 @@ const ProjectCard = ({
       }}
     >
       <div className="flex flex-col justify-between">
-        <div className="flex flex-col">
-          {project.href && (
-            <Link href={project.href} target="_blank">
-              <h4 className="font-medium text-lg">{project.title}</h4>
-            </Link>
-          )}
-          {!project.href && (
-            <h4 className="font-medium text-lg">{project.title}</h4>
-          )}
+        <div className="flex flex-col gap-1">
+          <div className="flex gap-2 items-start">
+            <div>
+              {project.href && (
+                <Link href={project.href} target="_blank">
+                  <h4 className="font-medium text-lg">{project.title}</h4>
+                </Link>
+              )}
+              {!project.href && (
+                <h4 className="font-medium text-lg">{project.title}</h4>
+              )}
+            </div>
+            <div className="space-x-2">
+              {project.type && (
+                <span className="text-xs px-2 py-1 rounded-full bg-accent/50 text-muted-foreground">
+                  {project.type}
+                </span>
+              )}
+              {project.scope && (
+                <span className="text-xs px-2 py-1 rounded-full bg-accent/50 text-muted-foreground">
+                  {project.scope}
+                </span>
+              )}
+            </div>
+          </div>
           <p className=" text-sm text-muted-foreground line-clamp-2 pr-16">
             {project.description}
           </p>
