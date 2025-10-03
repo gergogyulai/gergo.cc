@@ -15,15 +15,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Yetweets",
-    type: "Web App",
+    title: "Magneto",
+    type: "Browser Extension",
     scope: "Open Source",
-    description: "Archive of Kanye West's tweet history",
-    href: "https://yetweets.xyz/",
-    githubRepo: "https://github.com/gergogyulai/yetweets",
-    status: "InProgress",
-    highlighted: true,
-    tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
+    description: "Privacy-first browser extension that automatically collects and archives magnet links while you browse.",
+    href: "https://magneto.crackhead.engineering/",
+    githubRepo: "https://github.com/gergogyulai/magneto",
+    status: "Shipped",
+    tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
   },
   {
     title: "Lofiplayer",
@@ -36,23 +35,15 @@ export const projects: Project[] = [
     tags: ["React", "TanstackRouter", "Tailwind", "Vite", "Typescript"]
   },
   {
-    title: "Magneto",
-    type: "Browser Extension",
+    title: "Yetweets",
+    type: "Web App",
     scope: "Open Source",
-    description: "Privacy-first browser extension that automatically collects and archives magnet links while you browse.",
-    href: "https://magneto.crackhead.engineering/",
-    githubRepo: "https://github.com/gergogyulai/magneto",
-    status: "Shipped",
-    tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
-  },
-  {
-    title: "Sonora",
-    type: "Mobile App",
-    scope: "Open Source",
-    description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
-    githubRepo: "https://github.com/gergogyulai/sonora",
-    status: "OnHold",
-    tags: ["ReactNative", "Expo", "Typescript"]
+    description: "Archive of Kanye West's tweet history",
+    href: "https://yetweets.xyz/",
+    githubRepo: "https://github.com/gergogyulai/yetweets",
+    status: "InProgress",
+    highlighted: true,
+    tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
   },
   {
     title: "Noisr",
@@ -63,6 +54,15 @@ export const projects: Project[] = [
     githubRepo: "https://github.com/gergogyulai/noisr",
     status: "Shipped",
     tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
+  },
+  {
+    title: "Sonora",
+    type: "Mobile App",
+    scope: "Open Source",
+    description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
+    githubRepo: "https://github.com/gergogyulai/sonora",
+    status: "OnHold",
+    tags: ["ReactNative", "Expo", "Typescript"]
   },
   {
     title: "Wintoolbelt",
