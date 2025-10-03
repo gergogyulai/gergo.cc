@@ -39,7 +39,7 @@ export const projects: Project[] = [
     title: "Magneto",
     type: "Browser Extension",
     scope: "Open Source",
-    description: "Chrome extension to automatically grab magnet links in the background.",
+    description: "Privacy-first browser extension that automatically collects and archives magnet links while you browse.",
     href: "https://magneto.crackhead.engineering/",
     githubRepo: "https://github.com/gergogyulai/magneto",
     status: "Shipped",
